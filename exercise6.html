@@ -115,8 +115,16 @@
     </article>
 
     <script>
+      var isTrue = true;
       function collapseFunc(param) {
-        document.getElementById(param).style.display = "none";
+        if (isTrue) {
+          document.getElementById(param).style.display = "none";
+          isTrue = false;
+        } else if (!isTrue) {
+          document.getElementById(param).style.display = "";
+          isTrue = true;
+        }
+        console.log(isTrue);
       }
     </script>
   </body>
