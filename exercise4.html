@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise #4: Formatting text</title>
+    <style>
+      div {
+        width: 600px;
+        height: 100px;
+        border: 1px solid black;
+        margin-top: 10px;
+        /* default options */
+        font-family: Arial;
+        font-size: 12pt;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="form">
+      <select onchange="fontFamily(value)" name="font_family" id="font_family">
+        <option value="Arial" selected>Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Helvetica">Helvetica</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Courier New">Courier New</option>
+      </select>
+      <select onchange="fontFamily(value)" name="font_size" id="font_size">
+        <option value="8pt">8pt</option>
+        <option value="10pt">10pt</option>
+        <option value="12pt" selected>12pt</option>
+        <option value="14pt">14pt</option>
+        <option value="16pt">16pt</option>
+      </select>
+      <label
+        >Italic
+        <input
+          onchange="fontStyle('italic')"
+          type="checkbox"
+          name="font_italic"
+          id="font_italic"
+      /></label>
+      <label
+        >Bold
+        <input
+          onchange="fontStyle('bold')"
+          type="checkbox"
+          name="font_bold"
+          id="font_bold"
+      /></label>
+      <label
+        >Underline
+        <input
+          onchange="fontStyle('underline')"
+          type="checkbox"
+          name="font_underline"
+          id="font_underline"
+      /></label>
+    </form>
+
+    <div id="text">The quick brown fox jumps over the lazy dog</div>
+    <script>
+      var fontFamilyPropriety = document.getElementById("text");
+      var isTrue = true;
+      var constParam = "";
+      function fontFamily(param) {
+        if (param[0] > 0) {
+          document.getElementById("text").style.fontSize = param;
+        }
+        fontFamilyPropriety.style.fontFamily = param;
+      }
+      function fontStyle(param) {
+        console.log(param);
+        constParam = param;
+        // if (constParam == param) {
+        //   isTrue = true;
+        // }
+        if (isTrue) {
+          fontFamilyPropriety.style.fontStyle = param;
+          fontFamilyPropriety.style.fontWeight = param;
+          fontFamilyPropriety.style.textDecoration = param;
+          isTrue = false;
+        } else if (!isTrue) {
+          fontFamilyPropriety.style.fontStyle = "normal";
+          fontFamilyPropriety.style.fontWeight = "normal";
+          fontFamilyPropriety.style.textDecoration = "none";
+          isTrue = true;
+        }
+      }
+    </script>
+  </body>
+</html>

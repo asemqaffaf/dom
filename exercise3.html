@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <select onchange="flagSelector(value)">
+        <option
+          value="http://www.coraf.org/wp-content/themes/consultix/images/no-image-found-360x250.png"
+          >select</option
+        >
+        <option
+          value="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/2560px-Flag_of_Norway.svg.png"
+          >norway</option
+        >
+        <option
+          value="https://i0.wp.com/www.visionwear.com/wp-content/uploads/2011/09/sweden.gif?fit=550%2C345&ssl=1"
+          >sweden</option
+        >
+        <option
+          value="https://www.united-states-flag.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/f/l/flgfhis1000024675_-00_15-star-spangled-banner-3ftx5ft-printed-polyester-flag.jpg"
+          >USA</option
+        >
+      </select>
+    </div>
+    <img
+      width="600px"
+      id="mySelect"
+      src="http://www.coraf.org/wp-content/themes/consultix/images/no-image-found-360x250.png"
+      alt=""
+    />
+    <script>
+      var inst = document.getElementById("mySelect");
+      function flagSelector(test) {
+        inst.setAttribute("src", test);
+      }
+    </script>
+  </body>
+</html>

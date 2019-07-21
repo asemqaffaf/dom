@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise #5: Input check</title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+      .err {
+        color: red;
+        font-size: 0.7em;
+      }
+    </style>
+    <script>
+      /* TODO complete this part */
+    </script>
+  </head>
+  <body>
+    <form name="pw">
+      <table>
+        <tr>
+          <td>Password (min 6 characters):</td>
+          <td>
+            <input
+              oninput="passwordOneFunc()"
+              type="password"
+              name="password1"
+              id="password1"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw1_check" class="err"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat password:</td>
+          <td>
+            <input
+              oninput="checkIfMatched()"
+              type="password"
+              name="password2"
+              id="password2"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw2_check" class="err"></div>
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+    <script>
+      var passwordCheckOne = document.getElementById("password1");
+      var tooShort = document.getElementById("pw1_check");
+      var passwordCheckTwo = document.getElementById("password2");
+      var notMatch = document.getElementById("pw2_check");
+      var counter = 0;
+      function passwordOneFunc() {
+        if (passwordCheckOne.value.length < 6) {
+          tooShort.innerHTML = "Too short";
+        } else {
+          tooShort.innerHTML = "";
+        }
+      }
+      function checkIfMatched() {
+        if (passwordCheckTwo.value != passwordCheckOne.value) {
+          notMatch.innerHTML = "the two passwords don't match ";
+        } else {
+          notMatch.innerHTML = "";
+        }
+      }
+    </script>
+  </body>
+</html>
