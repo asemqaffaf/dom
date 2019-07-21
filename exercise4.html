@@ -61,19 +61,16 @@
     <script>
       var fontFamilyPropriety = document.getElementById("text");
       var isTrue = true;
-      var constParam = "";
+
       function fontFamily(param) {
         if (param[0] > 0) {
           document.getElementById("text").style.fontSize = param;
         }
         fontFamilyPropriety.style.fontFamily = param;
       }
+      
       function fontStyle(param) {
         console.log(param);
-        constParam = param;
-        // if (constParam == param) {
-        //   isTrue = true;
-        // }
         if (isTrue) {
           fontFamilyPropriety.style.fontStyle = param;
           fontFamilyPropriety.style.fontWeight = param;
